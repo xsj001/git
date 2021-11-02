@@ -18,5 +18,34 @@
 	git  checkout  -- 文件名  	检出git本地库文件到工作区
 	git rm  文件名		删除git版本库文件
 
+3.本地仓库文件推送到github
+	1.账户注册
+	2.github 创建仓库（仓库名称不允许中文）
+	3.本地生成ssh   公钥私钥
+	          ssh-keygen  -t  rsa  -C  "GitHub账户邮箱"
+	4.上传公钥到github
+	5.校验ssh环境
+	           ssh  -T  git@github.com
+	6.执行远程推送
+	         绑定远程仓库地址            git  remote  add  origin  git@github.com:地址
+	         本地创建分支                   git  branch  -M  main
+	         本地文件推送到远程         git  push  -u  origin  main
+
+4.本地分支基本操作
+	查看本地分支列表  	git   branch
+	创建本地分支	git   checkout   -b   branch_name
+	切换分支		git   checkout   branch_naem
+	合并分支		git   merge   branch_name
+	重命名分支		git   branch  -m | -M   old_branch_name   new_branch_name
+	删除分支		git   branch   -d  branch_name
+
+5.本地 & 远程分支操作
+	查看本地与远程分支   git   branch -a
+	推送本地分支到远程   git   push   origin   local_branch_name
+	拉取远程分支到本地   
+		git   clone   url
+		git   checkout   -b   local_branch_name   origin/branch_name
+	删除远程分支   git   push  origin  ：remote_branch_name	
+
 
 		
